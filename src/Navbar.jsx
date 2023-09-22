@@ -9,6 +9,7 @@ import {
 import ModalProduct from "./ModalProduct"
 import ModalLogin from './ModalLogin';
 import verifyLogin from '../services/VerifyLogin';
+import Reload from '../services/Reload';
 import './css/styles.css'
 
 /*
@@ -41,9 +42,13 @@ function NavbarComponent() {
             </NavItem>
             <NavItem className='col'>
                 <NavLink className='buttonNav' onClick={
-                    function(){ 
+                    function(){
+                        if(localStorage.getItem('token') == ''){
+                            alert('Você não está logado!')
+                        }
                         localStorage.setItem('username','')
                         localStorage.setItem('token', '')
+                        Reload()
                 }}>
                  Logout
                 </NavLink>

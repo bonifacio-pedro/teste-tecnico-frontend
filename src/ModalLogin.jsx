@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input } from 'reactstrap';
 import api from '../services/Api';
+import Reload from '../services/Reload';
 
 function ModalLogin({modal, toogle}) {
     const [name, setName] = useState('')
@@ -19,6 +20,7 @@ function ModalLogin({modal, toogle}) {
             localStorage.setItem('username',name)
             localStorage.setItem('token', response.data.tokenAuth)
 
+            Reload()
         }
         catch(error){
             alert("Esse usuário não existe em nosso sistema")
