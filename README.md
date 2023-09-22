@@ -1,8 +1,15 @@
-# React + Vite
+Parte frontend da aplicação feita para teste técnico
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Introdução
 
-Currently, two official plugins are available:
+Confesso que foi desafiador utilizar o REACT JS, estou estudando ainda a tecnologia e acredito que o código não esteja perfeito, porém fiz meu máximo, utilizei muita documentação e muita tecnologia!
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Como rodar?
+
+# Tecnologias utilizadas
+* ReactJS
+* Vite (ajuda na inicialização de um projeto ReactJS)
+* Bootstrap
+* Reacstrap (biblioteca muito util para integrar bootstrap com ReactJS)
+* JavaScript
+* Axios (biblioteca JS para integrar com API)
