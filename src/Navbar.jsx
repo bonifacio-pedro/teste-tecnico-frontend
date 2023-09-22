@@ -9,8 +9,9 @@ import {
 import ModalProduct from "./ModalProduct"
 import ModalLogin from './ModalLogin';
 import verifyLogin from '../services/VerifyLogin';
-import Reload from '../services/Reload';
+import reload from '../services/reload';
 import './css/styles.css'
+import authorization from '../services/Authorization';
 
 /*
 Componente da navbar, que muda perante o usuario estar logado ou não.
@@ -36,19 +37,21 @@ function NavbarComponent() {
                         verifyLogin() ? "Cadastrar Produto" : "Login"
                     }
                     {
-                        verifyLogin() ? <ModalProduct modal={modal} toogle={toogle}/> :  <ModalLogin modal={modal} toogle={toogle}/>
+                        verifyLogin() ? <ModalProduct modal={modal} toogle={toogle} type={"Cadastrar"}/> :  <ModalLogin modal={modal} toogle={toogle}/>
                     }
                 </NavLink>
             </NavItem>
             <NavItem className='col'>
                 <NavLink className='buttonNav' onClick={
                     function(){
-                        if(localStorage.getItem('token') == ''){
+                        if(!verifyLogin()){
                             alert('Você não está logado!')
+                            return;
                         }
                         localStorage.setItem('username','')
                         localStorage.setItem('token', '')
-                        Reload()
+                        authorization.headers = ''
+                        reload()
                 }}>
                  Logout
                 </NavLink>

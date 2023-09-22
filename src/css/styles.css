@@ -1,3 +1,6 @@
-.buttonNav {
+.buttonNav{
     cursor: pointer;
+}
+.delete {
+    cursor: pointer
 }
